@@ -57,18 +57,11 @@ HEADLESS=false behave      # abre o navegador pra você ver
 > Selenium 4 gerencia os drivers automaticamente (Selenium Manager) — não precisa baixar chromedriver/geckodriver.
 
 ## Relatório Allure
-
-**Local:**
 ```bash
 behave -f allure_behave.formatter:AllureFormatter -o allure-results
 allure serve allure-results
 ```
-
-**Publicado (GitHub Pages):** a cada push na `main`, o CI gera o relatório Allure (Chrome + Firefox, com histórico) e publica em:
-
-👉 **https://mateuscerqueirag.github.io/web-e2e-behave-selenium/**
-
-> Disponível após tornar o repositório **público** e habilitar o Pages em *Settings → Pages → Deploy from a branch → `gh-pages` / root*.
+> No CI, os resultados Allure de cada navegador ficam disponíveis como **artefato** do run (aba *Actions* → run → *Artifacts*), prontos para `allure serve`.
 
 ## CI
 Cada push roda a suíte em **Chrome e Firefox** no GitHub Actions (aba *Actions*). O badge no topo reflete o último resultado.
