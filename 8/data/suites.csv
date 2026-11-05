@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5024","Complete a purchase end to end","","2026-11-05","passed","2026-11-05","","","",""
+"","4093","Login requires a password","","2026-11-05","passed","2026-11-05","","","",""
+"","18001","Adding a product updates the cart badge","","2026-11-05","passed","2026-11-05","","","",""
+"","4413","Successful login with a standard user","","2026-11-05","passed","2026-11-05","","","",""
+"","24398","Removing a product empties the cart","","2026-11-05","passed","2026-11-05","","","",""
+"","4726","Checkout requires customer information","","2026-11-05","passed","2026-11-05","","","",""
+"","4147","Login is blocked for a locked-out user","","2026-11-05","passed","2026-11-05","","","",""
