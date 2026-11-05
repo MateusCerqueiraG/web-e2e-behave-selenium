@@ -77,6 +77,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # the allure report action runs as root in Docker; reclaim ownership
+          sudo chown -R "$(id -u):$(id -g)" allure-history
           cd allure-history
           git init -q
           git checkout -b gh-pages
