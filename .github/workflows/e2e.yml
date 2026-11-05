@@ -80,6 +80,7 @@ jobs:
           # the allure report action runs as root in Docker; reclaim ownership
           sudo chown -R "$(id -u):$(id -g)" allure-history
           cd allure-history
+          touch .nojekyll   # serve the Allure files as-is (skip Jekyll processing)
           git init -q
           git checkout -b gh-pages
           git add -A
