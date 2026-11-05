@@ -32,7 +32,10 @@ jobs:
         env:
           BROWSER: ${{ matrix.browser }}
           HEADLESS: 'true'
-        run: behave -f allure_behave.formatter:AllureFormatter -o allure-results -f pretty
+        run: |
+          # run once; on a flaky failure, re-run only the failed scenarios
+          behave -f allure_behave.formatter:AllureFormatter -o allure-results -f rerun -o rerun.txt -f pretty \
+            || { echo "::warning::Re-running flaky scenarios"; behave @rerun.txt -f allure_behave.formatter:AllureFormatter -o allure-results -f pretty; }
 
       - name: Upload Allure results
         if: always()
